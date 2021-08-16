@@ -1,0 +1,35 @@
+<%- include('./partial/header.ejs') -%>
+
+<%- include('./layouts/header.ejs') -%>
+<div>
+  <div class="grid-item">
+    <% if (product.images.length > 0) {%>
+      <% if (product.images.length > 1) { %>
+        <div class="slideshow-container">
+        <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <div class="mySlides fade">
+              <img src="<%= product.images[i] %>" alt="product image1">
+            </div>
+        <% } %>
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      <% }else {%>
+        <img src="<%= product.images[0] %>" alt="product image1">
+      <% } %> 
+    <% }else {%>
+      <img src="https://images.unsplash.com/photo-1554424944-d72b391975b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80" alt="">
+    <% } %>  
+    <h3><a href="/<%= product._id %>"><%= product.name %></a></h3>
+    <p class="category"><%= product.category %></p>
+    <p>Price: $<%= product.price %></p>
+    <p><%= product.description %> </p>
+    <form class="delete-form" action="/<%= product._id %>?_method=DELETE" method="post">
+      <input class="delete" type="submit" value="delete">
+    </form>
+  </div>
+</div>
+<script src="javascript/imageSlide.js"></script>
+<script src="javascript/deleteConfirm.js"></script>
+<%- include('./partial/footer.ejs') -%>

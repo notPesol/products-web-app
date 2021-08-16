@@ -1,0 +1,36 @@
+<%- include('./partial/header.ejs') -%>
+
+<%- include('./layouts/header.ejs') -%>
+  <div class="new-product">
+    <h3>Add new product</h3>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Product name: </label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="price">Product price: </label>
+        <input min="1" type="number" name="price" id="price">
+      </div>
+      <div class="form-group">
+        <label for="description">Product description: </label> <br>
+        <textarea cols="60" rows="3" type="text" name="description" id="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="">Product category: </label>
+        <% for( category of categories ) { %>
+          <div>
+            <input type="radio" name="category" id="<%= category %>" value="<%= category %>">
+            <label for="<%= category %>"><%= category %></label>
+          </div>
+        <% } %>
+      </div>
+      <div class="form-group">
+        <label for="images">Product images: </label>
+        <input multiple type="file" name="images" id="images" accept="image/*">
+      </div>
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+<%- include('./partial/footer.ejs') -%>

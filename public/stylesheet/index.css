@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+.wrapper{
+  background-color: rgb(46, 46, 46);
+}
+
+.header {
+  display: flex;
+  padding: 10px;
+  max-width: 1280px;
+  height: 50px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 20px auto;
+  max-width: 1280px;
+}
+
+.grid-item {
+  max-width: 1280px;
+  background-color: #464646;
+  margin: 20px auto 0 auto;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.grid-item img {
+  width: 100%;
+  max-width: 1280px;
+  max-height: 720px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.new-product{
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.form-group{
+  margin: 10px;
+}
+
+.new-product input:not([type='file']), textarea {
+  color: #464646;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.delete-form {
+  text-align: end;
+}
+
+.delete {
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1280px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
